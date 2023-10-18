@@ -35,9 +35,8 @@ def ab(a,b):
   #Código principal  
 x = int(input())
 if x==1:
-    a = int(input())
-    print(1)
-elif x==2:
+
+
     a = int(input())
     b = int(input())
     print(ab(a,b))
