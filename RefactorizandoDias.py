@@ -1,3 +1,4 @@
+# FUnciones
 """
 def solicitarDia():
 	return int(input("Introduce un día del mes: "))
@@ -10,24 +11,44 @@ def solicitarAnio():
 def solicitarNum(texto):
 	return int(input(f"introduce un {texto}: "))
 
+def mesNumericoATexto(numMes):
+	listaMeses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+	return listaMeses[numMes-1]
 
-
-
+# Codigo principal
 
 dia = solicitarNum("dia del mes")
-mes = solicitarNum("mes del anio")
+mesNum = solicitarNum("mes del anio")
+mes = mesNumericoATexto(mesNum)
+
 anio = solicitarNum("año")
 
-if mes == "febrero" and dia > 28:
-	print("No es valido")
-elif (mes == "septiembre" or mes == "noviembre" or mes == "abril" or mes == "junio")and dia > 30:
-	print("No es valido")
-elif dia > 31:
-	print("No es valido")
-
+esValido = True
+"""
 if anio > 2025:
-	print("No es valido")
+	esValido = False
+else:
+    if mes == "febrero" and dia > 28:
+        esValido = False
+    elif (mes == "septiembre" or mes == "noviembre" or mes == "abril" or mes == "junio")and dia > 30:
+        esValido = False
+    elif dia > 31:
+        esValido = False
+"""
+if anio < 2025:
+	if mes == "febrero" and dia > 28:
+		esValido = False
+	elif (mes == "septiembre" or mes == "noviembre" or mes == "abril" or mes == "junio")and dia > 30:
+		esValido = False
+	elif dia > 31:
+		esValido = False
+else:
+    esValido = False
 	
+print(f"El mes {mes} es {mesNumericoATexto(mesNum)}")
+
+""" 
+
 d2 = int(input("Introduce un día del mes: "))
 m2 = int(input("Introduce un mes: "))
 a2 = int(input("Introduce un año: "))
@@ -69,6 +90,8 @@ elif d4 > 31:
 	
 if a4 > 2025:
 	print("No es valido")
+
+	""" 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # funciones
 
