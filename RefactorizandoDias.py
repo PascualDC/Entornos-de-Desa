@@ -23,7 +23,10 @@ mes = mesNumericoATexto(mesNum)
 
 anio = solicitarNum("año")
 
-esValido = True
+esValido = False
+mes28DiasNoValido = mes == "febrero" and dia > 28
+mes30DiasNoValido = (mes == "septiembre" or mes == "noviembre" or mes == "abril" or mes == "junio")and dia > 30
+mes31DiasNoValido = dia > 31
 """
 if anio > 2025:
 	esValido = False
@@ -36,12 +39,8 @@ else:
         esValido = False
 """
 if anio < 2025:
-	if mes == "febrero" and dia > 28:
-		esValido = False
-	elif (mes == "septiembre" or mes == "noviembre" or mes == "abril" or mes == "junio")and dia > 30:
-		esValido = False
-	elif dia > 31:
-		esValido = False
+	if (anio < 2025) or not (mes28DiasNoValido or mes30DiasNoValido or mes31DiasNoValido):
+		esValido = True
 else:
     esValido = False
 	
