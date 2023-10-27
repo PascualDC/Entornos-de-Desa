@@ -19,14 +19,16 @@ El cocodrilo num 1 pesa 250kg, mide 5m y tiene 75 dientes.
 """
 
 # Funciones
+def preguntasChill(nombre):
+    return int(input(f"introduce el/la {nombre}: "))
 
 def rellenarDatosCocodrilos(num):
     resultado = ""
     for numCocodrilo in range(num):
-        peso = int(input("introduce el peso: "))
-        longitud = int(input("introduce la longitud: "))
-        numdientes = int(input("introduce el numero de dientes: "))
-        resultado += f"\nEl cocodrilo numero {numCocodrilo} pesa {peso}kg, mide {longitud}m y tiene {numdientes} dientes :O"
+        peso = preguntasChill("peso")
+        longitud = preguntasChill("longitud")
+        numdientes = preguntasChill("numdientes")
+        resultado += f"\nEl cocodrilo numero {numCocodrilo+1} pesa {peso}kg, mide {longitud}m y tiene {numdientes} dientes :O"
     return resultado
 
 
